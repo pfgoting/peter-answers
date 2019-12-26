@@ -1,0 +1,45 @@
+<html>
+
+
+<head>
+
+</head>
+
+<body>
+    <input id="source" />
+    <div id="result" />
+
+    <script>
+        const $source = document.querySelector('#source');
+        const $result = document.querySelector('#result');
+        const peterArray = ['P','e','t','e','r',' ','p','l','e','a','s','e',' ', 
+                    'a','n','s','w','e','r',' ','t','h','e',' ','f','o','l','l','o','w','i','n','g']
+
+        let src = ''
+
+        const typeHandler = function (e) {
+            let string = e.target.value;
+            console.log('asdasd'+string)
+            if (string.includes('.')) {
+                src = string
+                l = src.length;
+                $result.innerHTML = peterArray.slice(0,l).join('');
+                $source.value = peterArray.slice(0,l).join('');
+
+
+            } else {
+                $result.innerHTML = string;
+            }
+            
+        }
+
+        const peter = function (x) {
+
+        }
+
+        $source.addEventListener('input', typeHandler) // register for oninput
+        $source.addEventListener('propertychange', typeHandler) // for IE8
+    </script>
+</body>
+
+</html>
